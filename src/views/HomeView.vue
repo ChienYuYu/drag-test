@@ -1,28 +1,34 @@
 <template>
   <div class="wrapper">
-    <div class="box box1" draggable="true" :style="{order:divOrder[0]}"
-    @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
-      <h2>box1</h2>
+    <div class="wrap">
+      <div class="box box1" draggable="true" :style="{order:divOrder[0]}"
+      @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
+        <h2>box1</h2>
+      </div>
+      <div class="box box2" draggable="true" :style="{order:divOrder[1]}"
+      @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
+        <h2>box2</h2>
+      </div>
+      <div class="box box3" draggable="true" :style="{order:divOrder[2]}"
+      @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
+        <h2>box3</h2>
+      </div>
+      <div class="box box4" draggable="true" :style="{order:divOrder[3]}"
+      @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
+        <h2>box4</h2>
+      </div>
+      <div class="box box5" draggable="true" :style="{order:divOrder[4]}"
+      @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
+        <h2>box5</h2>
+      </div>
+      <div class="box box6" draggable="true" :style="{order:divOrder[5]}"
+      @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
+        <h2>box6</h2>
+      </div>
     </div>
-    <div class="box box2" draggable="true" :style="{order:divOrder[1]}"
-    @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
-      <h2>box2</h2>
-    </div>
-    <div class="box box3" draggable="true" :style="{order:divOrder[2]}"
-    @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
-      <h2>box3</h2>
-    </div>
-    <div class="box box4" draggable="true" :style="{order:divOrder[3]}"
-    @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
-      <h2>box4</h2>
-    </div>
-    <div class="box box5" draggable="true" :style="{order:divOrder[4]}"
-    @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
-      <h2>box5</h2>
-    </div>
-    <div class="box box6" draggable="true" :style="{order:divOrder[5]}"
-    @dragstart="dragStartHandler($event)" @dragover.prevent @drop="dropHandler($event)">
-      <h2>box6</h2>
+    <div class="txt">
+      <P class="p1">this.Order:[] == {{ this.Order }}</P>
+      <p class="p2">box1 = this.Order[0]/ box2 = this.Order[1]...</p>
     </div>
   </div>
 </template>
@@ -72,7 +78,23 @@ export default {
   padding: 0;
   margin: 0;
 }
-.wrapper{
+.txt{
+  margin-top: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  .p1{
+    color: #a0f;
+    margin-right: 20px;
+  }
+  .p2{
+    color: rgb(0, 106, 255);
+  }
+}
+h2{
+  font-size: 50px;
+}
+.wrap{
   display: flex;
   flex-wrap: wrap;
   .box{
@@ -82,7 +104,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
   }
   .box1{
     background: #fa0;
