@@ -1,24 +1,10 @@
-# drag-test
+## 元素拖曳範例
 
-## Project setup
-```
-npm install
-```
+@dragstart、@dragover、@drop事件
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+***
+### 拖曳box互換位置
 
-### Compiles and minifies for production
-```
-npm run build
-```
+demo: https://chienyuyu.github.io/drag-test/#/
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![image](sample_pic/s01.jpg)
