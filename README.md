@@ -1,4 +1,4 @@
-## 元素拖曳範例
+## Vue元素拖曳範例
 
 @dragstart、@dragover、@drop事件
 
@@ -7,4 +7,4 @@
 
 demo: https://chienyuyu.github.io/drag-test/#/
 
-![image](sample_pic/s01.jpg)
+![image](sample_pic/s02.jpg)

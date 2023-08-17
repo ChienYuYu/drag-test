@@ -2,7 +2,10 @@
   <div class="wrapper">
     <div class="header"></div>
     <div class="wrap">
-      <div class="side-menu"></div>
+      <div class="side-menu">
+        <router-link to="/">sample1</router-link>
+        <router-link to="/sample2">sample2</router-link>
+      </div>
       <div class="content-area">
         <router-view/>
       </div>
@@ -10,7 +13,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +30,7 @@
 .header{
   height: 50px;
   width: 100%;
-  background: #888;
+  background: #444;
   position: fixed;
 }
 .wrap{
@@ -36,19 +39,36 @@
 .side-menu{
   width: 300px;
   height: calc(100vh - 50px);
-  background: #555;
+  background: #333;
   position: fixed;
   top: 50px;
+  padding-top: 20px;
+  a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    &:hover{
+      background: rgb(49, 123, 159);
+    }
+  }
 }
 
 .content-area{
   position: relative;
   width: 100%;
+  height: calc(100vh - 50px);
   margin-left: 300px;
   margin-top: 50px;
-  /* border: 1px solid #111; */
-  /* display: flex;
-  flex-wrap: wrap; */
+  background: radial-gradient(circle, rgba(70,70,70,1) 0%, rgba(0,0,0,1) 100%);
+  overflow: auto;
+}
+
+
+.router-link-exact-active{
+  background: rgb(27, 91, 123);
 }
 
 </style>
