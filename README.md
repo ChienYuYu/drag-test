@@ -7,4 +7,4 @@
 
 demo: https://chienyuyu.github.io/drag-test/#/
 
-![image](sample_pic/s02.jpg)
+![image](sample_pic/s03.jpg)

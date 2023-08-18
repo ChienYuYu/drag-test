@@ -20,12 +20,11 @@
       </div>
 
 
-      <div class="box box3" :style="{order:divOrder[3]}">
+      <!-- <div class="box box3" :style="{order:divOrder[3]}">
         <div class="click-mask" draggable="true" @dragstart="dragStartHandler($event)"
         @dragover.prevent @drop="dropHandler($event)"></div>
-        <!-- <DougHnut /> -->
         <img src="https://cdn.pixabay.com/photo/2013/07/12/19/15/pie-chart-154411_1280.png" alt="">
-      </div>
+      </div> -->
       
     </div>
     
@@ -87,8 +86,11 @@ img{
 }
 
 .wrapper{
-  // height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
   // overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wrap{
   display: flex;

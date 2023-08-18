@@ -5,6 +5,7 @@
       <div class="side-menu">
         <router-link to="/">sample1</router-link>
         <router-link to="/sample2">sample2</router-link>
+        <router-link to="/sample3">sample3</router-link>
       </div>
       <div class="content-area">
         <router-view/>
