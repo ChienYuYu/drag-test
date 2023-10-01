@@ -6,7 +6,7 @@
         <router-link to="/">sample1</router-link>
         <router-link to="/sample2">sample2</router-link>
         <router-link to="/sample3">sample3</router-link>
-        <router-link to="/sample6">sample6</router-link>
+        <!-- <router-link to="/sample6">sample6</router-link> -->
         <router-link to="/sample7">sample7</router-link>
       </div>
       <div class="content-area">
