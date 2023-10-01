@@ -1,6 +1,40 @@
 <template>
   <div class="container">
     <button type="button" class="area_set_btn" @click="dragModal = !dragModal">版面設定</button>
+    <!-- /////////////////////////////////////////////////////////////// -->
+    <div class="show_area" v-show="!dragModal">
+      <!-- 3333333333 -->
+      <div v-if="nowShow == 3" class="show3">
+        <component :is="resultArray[0].view" class="show_item item1" />
+        <component :is="resultArray[1].view" class="show_item item2" />
+        <component :is="resultArray[2].view" class="show_item item3" />
+      </div>
+      <!-- 4444444444 -->
+      <div v-if="nowShow == 4" class="show4">
+        <component :is="resultArray[0].view" class="show_item item1" />
+        <component :is="resultArray[1].view" class="show_item item2" />
+        <component :is="resultArray[2].view" class="show_item item3" />
+        <component :is="resultArray[3].view" class="show_item item4" />
+      </div>
+      <!-- 5555555555 -->
+      <div v-if="nowShow == 5" class="show5">
+        <component :is="resultArray[0].view" class="show_item item1" />
+        <component :is="resultArray[1].view" class="show_item item2" />
+        <component :is="resultArray[2].view" class="show_item item3" />
+        <component :is="resultArray[3].view" class="show_item item4" />
+        <component :is="resultArray[4].view" class="show_item item5" />
+      </div>
+      <!-- 6666666666 -->
+      <div v-if="nowShow == 6" class="show6">
+        <component :is="resultArray[0].view" class="show_item item1" />
+        <component :is="resultArray[1].view" class="show_item item2" />
+        <component :is="resultArray[2].view" class="show_item item3" />
+        <component :is="resultArray[3].view" class="show_item item4" />
+        <component :is="resultArray[4].view" class="show_item item5" />
+        <component :is="resultArray[5].view" class="show_item item6" />
+      </div>
+    </div>
+    <!-- /////////////////////////////////////////////////////////////// -->
     <div class="set_area" v-if="dragModal">
       <!--  -->
       <div class="num_wrap">
@@ -46,7 +80,7 @@
           <div class="item item6">{{itemArray[5].itemName}}</div>
         </draggable>
       </div>
-      <button type="button" class="confirm_btn">設定</button>
+      <button type="button" class="confirm_btn" @click="setResult">設定</button>
       <!-- <div class="result">
         {{ itemArray }}
       </div> -->
@@ -56,22 +90,44 @@
 
 <script>
 import draggable from 'vuedraggable'
+import AA from './AA.vue'
+import BB from './BB.vue'
+import CC from './CC.vue'
+import DD from './DD.vue'
+import EE from './EE.vue'
+import FF from './FF.vue'
 
   export default {
-    components: {draggable},
+    components: {
+      draggable,
+      AA,
+      BB,
+      CC,
+      DD,
+      EE,
+      FF
+    },
     data() {
       return {
-        dragModal:true,
+        dragModal:false,
+        nowShow: 3,
         nowSet:3,
         itemArray: [
-        {id: 1, itemName: 'A'},
-        {id: 2, itemName: 'B'},
-        {id: 3, itemName: 'C'},
-        {id: 4, itemName: 'D'},
-        {id: 5, itemName: 'E'},
-        {id: 6, itemName: 'F'},
+          {id: 1, itemName: 'A', view:'AA'},
+          {id: 2, itemName: 'B', view:'BB'},
+          {id: 3, itemName: 'C', view:'CC'},
+          {id: 4, itemName: 'D', view:'DD'},
+          {id: 5, itemName: 'E', view:'EE'},
+          {id: 6, itemName: 'F', view:'FF'},
         ],
-        resultArray: [],
+        resultArray: [
+          {id: 1, itemName: 'A', view:'AA'},
+          {id: 2, itemName: 'B', view:'BB'},
+          {id: 3, itemName: 'C', view:'CC'},
+          {id: 4, itemName: 'D', view:'DD'},
+          {id: 5, itemName: 'E', view:'EE'},
+          {id: 6, itemName: 'F', view:'FF'},
+        ],
       }
     },
     computed: {},
@@ -98,6 +154,7 @@ import draggable from 'vuedraggable'
         this.nowSet = num;
       },
       setResult() {
+        this.nowShow = this.nowSet;
         this.resultArray = this.itemArray;
       },
     },
@@ -119,7 +176,96 @@ import draggable from 'vuedraggable'
       margin-right: 10px;
       margin-top: 20px;
     }
-    div.set_area{
+    div.show_area{ //顯示的css
+      width: 95%;
+      border: 1px solid #333;
+      margin: 10px auto;
+
+      .show3 ,.show4, .show5, .show6{
+        height: 740px;
+        display: grid;
+        grid-auto-rows: 1fr;
+        grid-auto-columns: 1fr;
+        // grid-column-gap: 10px;
+        // grid-row-gap: 10px;
+      }
+      div.show3{
+        .show_item{
+          outline: 1px solid #333;
+          .item1 {
+        }
+          grid-area: 1/1/2/2;
+        }
+        .item2 {
+          grid-area: 2/1/3/2;
+        }
+        .item3 {
+          grid-area: 1/2/3/3;
+        }
+      }
+      div.show4{
+        .show_item{
+          outline: 1px solid #333;
+          .item1 {
+        }
+          grid-area: 1/1/2/2;
+        }
+        .item2 {
+          grid-area: 1/2/2/3;
+        }
+        .item3 {
+          grid-area: 2/1/3/2;
+        }
+        .item4 {
+          grid-area: 2/2/3/3;
+        }
+      }
+      div.show5{
+        .show_item{
+          outline: 1px solid #333;
+          .item1 {
+        }
+          grid-area: 1/1/2/3;
+        }
+        .item2 {
+          grid-area: 1/3/2/5;
+        }
+        .item3 {
+          grid-area: 1/5/2/7;
+        }
+        .item4 {
+          grid-area: 2/1/3/4;
+        }
+        .item5 {
+          grid-area: 2/4/3/7;
+        }
+      }
+      div.show6{
+        .show_item{
+          outline: 1px solid #333;
+          .item1 {
+        }
+          grid-area: 1/1/2/2;
+        }
+        .item2 {
+          grid-area: 1/2/2/3;
+        }
+        .item3 {
+          grid-area: 1/3/2/4;
+        }
+        .item4 {
+          grid-area: 2/1/3/2;
+        }
+        .item5 {
+          grid-area: 2/2/3/3;
+        }
+        .item6 {
+          grid-area: 2/3/3/4;
+        }
+      }
+
+    }
+    div.set_area{ // 拖曳Modal的css
       width: 80%;
       height: 760px;
       margin: 0 auto;
