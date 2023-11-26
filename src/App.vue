@@ -8,6 +8,8 @@
         <router-link to="/sample3">sample3</router-link>
         <!-- <router-link to="/sample6">sample6</router-link> -->
         <router-link to="/sample7">sample7</router-link>
+        <router-link to="/sample8">sample8</router-link>
+        <router-link to="/sample9">sample9</router-link>
       </div>
       <div class="content-area">
         <router-view/>
@@ -44,6 +46,7 @@
   height: calc(100vh - 50px);
   background: #333;
   position: fixed;
+  z-index: 99;
   top: 50px;
   padding-top: 20px;
   a{
@@ -62,8 +65,9 @@
 .content-area{
   position: relative;
   width: 100%;
-  height: calc(100vh - 50px);
+  width: calc(100% - 300px);
   margin-left: 300px;
+  height: calc(100vh - 50px);
   margin-top: 50px;
   background: radial-gradient(circle, rgba(70,70,70,1) 0%, rgba(0,0,0,1) 100%);
   overflow: auto;
