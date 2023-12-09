@@ -10,6 +10,7 @@
         <router-link to="/sample7">sample7</router-link>
         <router-link to="/sample8">sample8</router-link>
         <router-link to="/sample9">sample9</router-link>
+        <router-link to="/sample9-1">sample9-1</router-link>
       </div>
       <div class="content-area">
         <router-view/>
